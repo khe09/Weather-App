@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
+import Popup from 'reactjs-popup';
 import axios from 'axios';
 
 function App() {
@@ -89,7 +90,15 @@ function App() {
       {/* Title Section */}
       <div className="title-section">
         <h1>Welcome</h1>
-        <h3>Check out today's weather</h3>
+        <div className="sub-title">
+        <h3>Hi, I am <b>Katie He</b>! Check out today's weather</h3>
+            <Popup trigger=
+                {<button> I </button>}
+                position="right center">
+                <div className="pop-up">The <b>Product Manager Accelerator Program</b> is designed to support PM professionals through every stage of their career. From students looking for entry-level jobs to Directors looking to take on a leadership role, our program has helped over hundreds of students fulfill their career aspirations. Our Product Manager Accelerator community are ambitious and committed. Through our program they have learnt, honed and developed new PM and leadership skills, giving them a strong foundation for their future endeavours.</div>
+            </Popup>
+        
+        </div>
       </div>
 
       {/* Main Content Section */}
@@ -154,14 +163,10 @@ function App() {
                     <div key={item.dt} className="forecast-item">
                       <p>{new Date(item.dt * 1000).toLocaleDateString()}</p>
                       <div className="forecast-additional">
-                        <p>Temp: {item.main.temp} °C</p>
-                        <p>Humidity: {item.main.humidity}%</p>
-                        <p>Wind: {item.wind.speed} m/s</p>
-                        <img
-                          src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
-                          alt={item.weather[0].description}
-                          className="weather-icon"
-                        />
+                        <p>{item.main.temp} °C</p>
+                        <p> {item.main.humidity}%</p>
+                        <p> {item.wind.speed} m/s</p>
+                        
                       </div>
                     </div>
                   ))}

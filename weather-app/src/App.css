@@ -20,6 +20,24 @@
   color: rgb(255, 255, 255);
   font-size: 20px;
 }
+.sub-title{
+  display:flex;
+}
+.sub-title button{
+  border-radius:30px;
+  border-width: 0ch;
+  width: 20px;
+  height: 20px;
+  margin: 24px;
+}
+.pop-up{
+  background-color: white;
+  word-spacing: 2px;
+  font-size: 9px;
+  padding:5px;
+  max-width: 170px;
+  border-radius: 4px;
+}
 .main-content {
   display: flex;
   justify-content: space-between; 
@@ -39,7 +57,6 @@
   max-width: 400px; 
 }
 
-
 .App-link {
   color: #61dafb;
 }
@@ -54,7 +71,7 @@
 }
 /* Style for the suggestion list container */
 input[type="text"] {
-  width: 100%; 
+  width: 150%; 
   padding: 10px;
   font-size: 14px;
   border: 0px solid #ccc;
@@ -78,7 +95,7 @@ input[type="text"] {
   font-size: 14px;
   color:rgb(89, 33, 83);
   border: 0px solid #ccc;
-  background-color: rgb(226, 211, 213);
+  background-color: rgb(238, 219, 222);
   font-weight: 350;
   outline: none;
   box-sizing: border-box;
@@ -105,7 +122,6 @@ input[type="text"] {
   width: calc(100% - 2px); 
 }
 
-/* Style for each suggestion item */
 .suggestions li {
   padding: 10px;
   cursor: pointer;
@@ -113,7 +129,6 @@ input[type="text"] {
   font-size: 16px;
 }
 
-/* Hover effect for each suggestion item */
 .suggestions li:hover {
   background-color: #f0f0f0;
 }
@@ -123,7 +138,14 @@ input[type="text"] {
   width: 300px; 
   margin: 0 auto;
 }
+.weather-info{
+  font-size: 20px;
 
+}
+.weather-icon{
+  width:100px;
+  height:100px;
+}
 .forecast-section {
   display: flex;
   flex-direction: column;
@@ -140,6 +162,9 @@ input[type="text"] {
   background-color: rgb(245, 231, 231);
   margin:10px;
   border-radius: 8px;
+  color: rgb(121, 51, 76);
+  font-weight: 600px;
+  padding:5px;
 
 }
 .forecast-info h2{
@@ -151,11 +176,12 @@ input[type="text"] {
   margin-top: 200px;
   color:white;
 }
-.forcast-additional{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; 
-  align-items: center;
-  padding: 20px;
 
+
+.forecast-additional{
+  display:flex;
+  justify-content: space-between; 
+  padding:0px 10px;
+  background-color: rgba(255, 255, 255, 0.852);
+  border-radius: 8px;
 }
