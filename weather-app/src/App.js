@@ -9,6 +9,7 @@ function App() {
   const [suggestions, setSuggestions] = useState([]);
   const [forecast, setForecast] = useState(null);
   const [locationError, setLocationError] = useState('');
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -24,14 +25,19 @@ function App() {
           } catch (error) {
             console.error('Error fetching weather by location:', error);
           }
+          finally {
+            setLoading(false); // Set loading to false when data is fetched
+          }
         },
         (error) => {
           console.error('Error getting location:', error);
           setLocationError('Unable to access your location. Please enter a city manually.');
+          setLoading(false);
         }
       );
     } else {
       setLocationError('Geolocation is not supported by this browser.');
+      setLoading(false);
     }
   }, []);
 
@@ -83,7 +89,17 @@ function App() {
     } catch (error) {
       console.error('Error fetching weather data:', error);
     }
+    finally {
+      setLoading(false); 
+    }
   };
+  if (loading) {
+    return (
+      <div className="loader-container">
+        <div className="loader">Loading...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="App">
